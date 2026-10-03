@@ -3,6 +3,60 @@
 Implements **Enhancement 1 (Pricing Based on Milk Quality)** from the paper.
 Payment is computed from milk **quantity and quality** (FAT and SNF), so better milk earns more.
 
+## Setup and Run
+
+Requires Python 3.9+.
+
+### 1) Clone or open the project
+```bash
+cd E:\Major_Pro\Major
+```
+
+### 2) Create a virtual environment
+
+#### Windows (PowerShell)
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+#### Linux / macOS
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3) Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4) Start the app
+
+#### Windows
+```powershell
+.\venv\Scripts\python.exe -m uvicorn app.main:app --reload
+```
+
+#### Linux / macOS
+```bash
+uvicorn app.main:app --reload
+```
+
+#### Quick script option
+```bash
+./run.sh
+```
+On Windows, you can also double-click `run.bat`.
+
+Then open: http://127.0.0.1:8000
+
+### 5) Optional commands
+```bash
+python seed_demo.py
+python -m pytest -v
+```
+
 ## Run
 
 **Linux / macOS:** `./run.sh`  
@@ -10,9 +64,6 @@ Payment is computed from milk **quantity and quality** (FAT and SNF), so better 
 Then open <http://127.0.0.1:8000>.
 
 Manual: `python -m venv venv`, activate it, `pip install -r requirements.txt`, `uvicorn app.main:app --reload`.
-Requires Python 3.9+.
-
-Optional demo data: `python seed_demo.py`   |   Run tests: `python -m pytest -v`
 
 ## Formula
 
